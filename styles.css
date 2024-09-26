@@ -1,0 +1,54 @@
+/* Reset some default browser styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply box-sizing globally */
+* {
+    box-sizing: border-box;
+}
+
+/* Create responsive layout using media queries */
+/* Desktop view */
+.section {
+    width: 33.33%; /* Equal width for all sections */
+    float: left;
+    border: 1px solid black;
+    padding: 20px;
+    background-color: #f5f5f5;
+    position: relative;
+}
+
+.section-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #3498db;
+    color: white;
+    padding: 5px 10px;
+    font-size: 125%; /* 25% larger than dummy text */
+}
+
+/* Tablet view */
+@media (max-width: 991px) {
+    .section {
+        width: 50%; /* Two sections in one row */
+        clear: both; /* Clear float to create new row */
+    }
+
+    .section:nth-child(3) {
+        width: 100%; /* Full width for the third section in the second row */
+    }
+}
+
+/* Mobile view */
+@media (max-width: 767px) {
+    .section {
+        width: 100%; /* Each section takes full width */
+    }
+
+    .section-title {
+        font-size: 150%; /* 50% larger than dummy text */
+    }
+}
